@@ -30,9 +30,9 @@ This document outlines the systematic approach used to extract, process, and cle
 * **Automated Retrieval:** To resolve the missing sectors, we wrote a multithreaded Python script leveraging the `yfinance` library. 
 * We queried Yahoo Finance for all the "Unknown" historical tickers. This automatically mapped and restored the correct `GICS Sector` for over **133** historical companies.
 
-## 5. Manual Remediation
+## 5. Manual Remediation & AI Assistance (Claude)
 * **Edge Cases & Delisted Stocks:** A significant subset of companies (totaling **236**) were not easily retrievable via standard ticker querying due to M&A activities, delisting, or ticker changes over the past 30-50 years.
-* **Expert Mapping:** The remaining unknown sectors were completely resolved through explicit manual dictionary mappings provided by the user. 
+* **AI-Assisted Mapping:** The remaining unknown sectors were completely resolved by querying **Claude AI** to retrieve the historical GICS classifications for these specific legacy companies. This mapping was then manually integrated into the dataset.
 * **Completion:** The dataset achieved 100% GICS Sector mapping for all constituent spells from 1975 to 2026.
 
 ## Final Output Structure
